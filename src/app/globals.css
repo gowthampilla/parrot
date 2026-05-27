@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+@layer base {
+  body {
+    background-color: #050505;
+    color: #FAFAFA;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  
+  ::selection {
+    background-color: rgba(79, 70, 229, 0.3);
+  }
+}
+
+@layer components {
+  /* The core component for Apple-level premium cards */
+  .glass-panel {
+    @apply bg-surface/80 backdrop-blur-2xl border border-white/[0.04] shadow-cinematic rounded-3xl;
+  }
+  
+  /* For the floating bottom navigation dock */
+  .floating-dock {
+    @apply bg-surface-raised/70 backdrop-blur-xl border border-white/[0.08] shadow-glow-indigo rounded-3xl;
+  }
+}
+
+/* Hide scrollbar for the horizontal profile avatars to keep it ultra clean */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
